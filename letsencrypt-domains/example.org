@@ -1,0 +1,5 @@
+# You get one certificate for each file
+# valid for all the domains listed.
+example.org # The first line is usually the CN
+www.example.org # The other lines are alternative names
+mail.example.org
