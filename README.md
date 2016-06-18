@@ -33,10 +33,13 @@ You can use the include files you find in the /nginx/ sub-directory of this repo
 
 ```
 http {
+    include upstream_certbot80.conf;
+    include upstream_certbot443.conf;
+
     server {
         listen 80;
         server_name example.org www.example.org;
-        include location_certbot80;
+        include location_certbot80.conf;
 
         ...
     }
@@ -45,7 +48,7 @@ http {
         listen 443 ssl;
         server_name example.org www.example.org;
         include ssl_example_org.conf;
-        include location_certbot443;
+        include location_certbot443.conf;
 
         ...
     }
@@ -53,7 +56,7 @@ http {
     server {
         listen 80;
         server_name example.com www.example.com;
-        include location_certbot80;
+        include location_certbot80.conf;
 
         ...
     }
@@ -62,7 +65,7 @@ http {
         listen 443 ssl;
         server_name example.com www.example.com;
         include ssl_example_com.conf;
-        include location_certbot443;
+        include location_certbot443.conf;
 
         ...
     }
