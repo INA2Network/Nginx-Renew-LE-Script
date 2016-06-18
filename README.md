@@ -33,8 +33,7 @@ You can use the include files you find in the /nginx/ sub-directory of this repo
 
 ```
 http {
-    include upstream_certbot80.conf;
-    include upstream_certbot443.conf;
+    include upstream_certbot.conf;
 
     server {
         listen 80;
