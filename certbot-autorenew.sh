@@ -7,7 +7,7 @@ http_port=8800
 https_port=4433
 
 # For testing as non-root
-#extra_args="--staging --logs-dir ${HOME}/log --config-dir ${HOME}/config --agree-tos --email stribika@gmail.com"
+#extra_args="--staging --logs-dir ${HOME}/log --config-dir ${HOME}/config --agree-tos --email tom@in-autos.com"
 extra_args="--quiet"
 
 renew_cert() {
@@ -36,6 +36,5 @@ else
 fi
 
 if [ -e /var/tmp/letsencrypt/needs-restart ]; then
-    # Needs service restart, nginx -s reload does not always reload the certificates.
-    nginx -t && service nginx restart && rm /var/tmp/letsencrypt/needs-restart
+    reconfigure-nginx.sh $*
 fi
