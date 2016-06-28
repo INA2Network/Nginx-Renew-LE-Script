@@ -12,7 +12,7 @@ extra_args="--quiet"
 
 renew_cert() {
     for site in $*; do
-        domains="$(sed -r 's/#.*//;s/ +//g;/^$/ d' "$site" | sed -r -z 's/\n(.)/,\1/g')"
+        domains="$(certbot-parse.sh "$site" ',')"
 
         if [ -z "$domains" ]; then
             echo "no domains in $site"
