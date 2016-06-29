@@ -10,7 +10,7 @@ Some distros have a certbot package, use that if you can.
 ## Installation
 
 Copy certbot-autorenew.sh to /usr/local/sbin or some other location on $PATH.
-Create the /etc/letsencrypt-domains directory.
+Create the /etc/le-domains directory.
 Files in this directory correspond to certificates.
 Certificates will be valid for every domain listed in these files (one per line).
 

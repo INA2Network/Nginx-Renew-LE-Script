@@ -32,7 +32,7 @@ mkdir -p /var/tmp/letsencrypt
 if [ $# -gt 0 ]; then
     renew_cert $*
 else
-    renew_cert /etc/letsencrypt-domains/*
+    renew_cert /etc/le-domains/*
 fi
 
 if [ -e /var/tmp/letsencrypt/needs-restart ]; then

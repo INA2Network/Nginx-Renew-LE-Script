@@ -19,7 +19,7 @@ reconf_site() {
 if [ $# -gt 0 ]; then
     reconf_site $*
 else
-    reconf_site /etc/letsencrypt-domains/*
+    reconf_site /etc/le-domains/*
 fi
 
 # Needs service restart, nginx -s reload does not always reload the certificates.
