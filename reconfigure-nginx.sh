@@ -9,9 +9,9 @@ reconf_site() {
 
         for domain in $(certbot-parse.sh "$site" ' '); do
             ssl_config="/etc/nginx/ssl/${domain}.conf"
-            echo "ssl_certificate /etc/letsencrypt/live/${site}/fullchain.pem;"    > "$ssl_config"
-            echo "ssl_certificate_key /etc/letsencrypt/live/${site}/privkey.pem;" >> "$ssl_config"
-            echo "include ssl/ssl_common.conf;"                                   >> "$ssl_config"
+            echo "ssl_certificate /etc/letsencrypt/live/$(basename "$site")/fullchain.pem;"    > "$ssl_config"
+            echo "ssl_certificate_key /etc/letsencrypt/live/$(basename "$site")/privkey.pem;" >> "$ssl_config"
+            echo "include ssl/ssl_common.conf;" >> "$ssl_config"
         done
     done
 }
